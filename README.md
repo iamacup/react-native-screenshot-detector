@@ -1,7 +1,7 @@
 
 # react-native-screenshot-detect
 
-# This is a drop-in replacement for react-native-screenshot-detector with fixes for react-native > 0.60.0
+# This is a drop-in replacement for react-native-screenshot-detector with fixes for react-native > 0.60.0 which is no longer maintained
 
 Note: this project is designed to work with the newer version of React Native library imports, i.e. React Native >= 0.40.0, and will only work on iOS as Android does not provide the underlying functionality needed to track screenshots.
 
