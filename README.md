@@ -9,13 +9,16 @@ Note: this project is designed to work with the newer version of React Native li
 
 React Native < 0.60.0
 
-`$ npm install react-native-screenshot-detect`
+`npm install react-native-screenshot-detect`
 
-`$ react-native link react-native-screenshot-detect`
+`react-native link react-native-screenshot-detect`
 
 React Native >= 0.60.0
 
-`$ npm install react-native-screenshot-detect`
+`npm install react-native-screenshot-detect`
+
+`pod install` inside of the ios sub folder
+
 
 ## Usage
 
@@ -45,7 +48,7 @@ Update the AppDelegate.m file to include the following:
 import * as ScreenshotDetector from 'react-native-screenshot-detect';
 
 // Subscribe callback to screenshots:
-this.eventEmitter = ScreenshotDetector.subscribe(function() { ... });
+this.eventEmitter = ScreenshotDetector.subscribe(() => { ... });
 
 // Unsubscribe later (a good place would be componentWillUnmount)
 ScreenshotDetector.unsubscribe(this.eventEmitter);
