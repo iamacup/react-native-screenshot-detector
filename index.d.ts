@@ -1,4 +1,4 @@
-declare module "react-native-screenshot-detector" {
+declare module "react-native-screenshot-detect" {
     import { NativeEventEmitter } from 'react-native';
 
     export function subscribe(cb: Function): NativeEventEmitter;
