@@ -1,15 +1,19 @@
+import {NativeEventEmitter, NativeModules} from 'react-native';
 
-import { NativeEventEmitter, NativeModules } from 'react-native';
 const { RNScreenshotDetector } = NativeModules;
 
 export const SCREENSHOT_EVENT = 'ScreenshotTaken';
 
-export function subscribe(cb) {
+export function onTakeScreenshot(listener) {
   const eventEmitter = new NativeEventEmitter(RNScreenshotDetector);
-  eventEmitter.addListener(SCREENSHOT_EVENT, cb, {});
-  return eventEmitter;
+  const eventSubscription = eventEmitter.addListener(
+      SCREENSHOT_EVENT,
+      listener,
+  );
+  const unsubscribe = () => {
+    eventSubscription.remove();
+  };
+
+  return unsubscribe;
 }
 
-export function unsubscribe(eventEmitter) {
-  eventEmitter.removeAllListeners(SCREENSHOT_EVENT);
-}
