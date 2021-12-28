@@ -38,7 +38,7 @@ Update the AppDelegate.m file to include the following:
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL...]
 
   // Somewhere below this you can setup the screenshot detector to listen for events
-  RNScreenshotDetector* screenshotDetector = [[RNScreenshotDetector alloc] init];
+  RNScreenshotDetector *screenshotDetector = [[RNScreenshotDetector alloc] init];
   [screenshotDetector setupAndListen:rootView.bridge];
 }
 ```
